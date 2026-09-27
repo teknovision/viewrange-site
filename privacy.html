@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ViewRange Privacy Policy</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+<header><a class="brand" href="index.html">ViewRange</a><nav><a href="privacy.html" aria-current="page">Privacy</a><a href="support.html">Support</a></nav></header>
+
+<h1>Privacy Policy</h1>
+<p class="meta">Effective 27 September 2026 · applies to the ViewRange app for iPhone and iPad</p>
+
+<p>ViewRange measures the distance to what you point your camera at. It is built to do that on your device. There is no account, no sign-in, no advertising, no analytics service and no server of ours. This page says exactly what the app touches and where it goes.</p>
+
+<h2>What stays on your device</h2>
+<ul>
+  <li><b>Camera.</b> The live view and LiDAR depth are processed on the device to find the distance. No image or depth data leaves the device unless you save a picture (below).</li>
+  <li><b>Location, heading and motion.</b> Your GPS position, compass heading and the angle of the phone are used to compute distances and to place targets on the map. They are kept in memory while the app runs.</li>
+  <li><b>Saved readings.</b> Readings you save (distance, source, target coordinate, heading, time, an optional note and, with ViewRange Pro, a small thumbnail) are stored in the app's own database on the device. Free keeps the last three readings for the session; Pro keeps them until you delete them in History. Deleting the app deletes this database.</li>
+  <li><b>Saved pictures.</b> When you save an annotated picture, the app asks for permission to add it to your Photos library. It can only add pictures; it cannot read your library. The picture carries the target coordinate in its metadata, like any photo you take.</li>
+  <li><b>Settings and diagnostics.</b> Map style, the indoor lock, sensor toggles and a one-time "What changed" flag are stored in the app's preferences. Performance metrics collected by Apple's MetricKit (launch time, hang rate, timing of elevation lookups) are stored on the device and are never sent anywhere by the app on its own.</li>
+</ul>
+
+<h2>What is sent over the network, and to whom</h2>
+<p>To measure over terrain, the app needs the height of the ground along the line you are aiming at. It requests that from public elevation services. Each request contains the coordinates of the points being looked up (your position and points along the aiming line, rounded to a grid of roughly ten metres) and, like any internet request, your IP address. No name, account or device identifier is sent.</p>
+<table>
+<thead><tr><th>Service</th><th>What it receives</th><th>Operator</th></tr></thead>
+<tbody>
+<tr><td>Mapterhorn terrain tiles (<code>tiles.mapterhorn.com</code>)</td><td>Map tile addresses covering the area being measured</td><td>Mapterhorn, a community project served from Cloudflare</td></tr>
+<tr><td>AWS Open Data Terrain Tiles (<code>s3.amazonaws.com</code>)</td><td>Map tile addresses, used when Mapterhorn is unavailable</td><td>Amazon Web Services Open Data</td></tr>
+<tr><td>OpenTopoData (<code>api.opentopodata.org</code>)</td><td>Rounded coordinates, used only when both tile services fail</td><td>OpenTopoData</td></tr>
+<tr><td>Open-Elevation (<code>api.open-elevation.com</code>)</td><td>Rounded coordinates, last fallback</td><td>Open-Elevation</td></tr>
+</tbody>
+</table>
+<p>Tiles and elevation values are cached on the device for up to 180 days so the same area is not requested twice. Indoors, or when you lock indoor mode, no elevation request is made at all.</p>
+
+<h2>Apple services the app uses</h2>
+<ul>
+  <li><b>Maps and place search</b> use Apple's MapKit. Apple's privacy policy applies to map tiles and search suggestions.</li>
+  <li><b>Purchases.</b> ViewRange Pro is a one-time purchase through the App Store. Apple processes the payment; the app never sees your payment details. Restoring a purchase uses your Apple Account through StoreKit.</li>
+  <li><b>Go to target</b> (Pro) hands the target coordinate to Apple Maps or, if you choose it, Google Maps. From that moment the chosen app's privacy policy applies.</li>
+  <li><b>App Store analytics.</b> If you have chosen to share analytics with developers in iOS Settings, Apple gives us aggregated, anonymous usage and crash information. We cannot identify you from it.</li>
+</ul>
+
+<h2>Feedback you send</h2>
+<p>The Send Feedback button composes an email in your Mail app addressed to <a href="mailto:philippecoley@me.com">philippecoley@me.com</a>. It pre-fills your comment, the current readings (position, heading, angle, the distances computed) and the on-device performance summary so we can reproduce a problem. You see the whole message before you send it and can delete anything from it. Nothing is sent unless you press Send.</p>
+
+<h2>What the app does not do</h2>
+<ul>
+  <li>No tracking across apps or websites. The app's privacy manifest declares <code>NSPrivacyTracking = false</code>.</li>
+  <li>No advertising and no third-party analytics or crash-reporting SDKs.</li>
+  <li>No sale or sharing of personal data with anyone.</li>
+  <li>No account and no cloud storage of your readings in the current version. If a later version adds iCloud sync for Pro history, it will be optional and stored in your own iCloud account, and this page will say so.</li>
+</ul>
+
+<h2>Apple privacy label</h2>
+<p>On the App Store the app declares <b>Precise Location</b>, used for app functionality, not linked to your identity and not used for tracking. That is the only data category the app handles that Apple classifies as collected, because coordinates reach the elevation services listed above.</p>
+
+<h2>Children</h2>
+<p>ViewRange is not directed at children under 13 and collects no personal information from anyone.</p>
+
+<h2>Your choices</h2>
+<ul>
+  <li>Revoke camera, location, motion or Photos access at any time in iOS Settings. Without location, the app still measures with LiDAR at close range.</li>
+  <li>Delete saved readings in History, or delete the app to remove everything it stored.</li>
+  <li>Questions or requests: <a href="mailto:philippecoley@me.com">philippecoley@me.com</a>.</li>
+</ul>
+
+<h2>Changes</h2>
+<p>When this policy changes, the effective date at the top changes and the app's About screen links to the current version.</p>
+
+<footer>ViewRange is developed in Switzerland by Philippe Coley. Elevation data © swisstopo, © Copernicus (ESA), Mapterhorn, AWS Open Data Terrain Tiles; buildings © OpenStreetMap contributors (ODbL).</footer>
+</div>
+</body>
+</html>
